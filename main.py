@@ -37,13 +37,31 @@ def main():
     for i in range(len(wordbase)):
         wordbase[i]=wordbase[i].replace('\n','')#убрать \n
 
-    textfile = open("text.txt", encoding='utf-8')
+    textfile = open("sample_text.txt", encoding='utf-8')
     text = textfile.read() #открть текст на чтение 
     textfile.close()#закрыть
 
     raw_words = text.split(' ')
     words = []
     for i in range(len(raw_words)):
+        raw_words[i]=raw_words[i].replace('*','')
+        raw_words[i]=raw_words[i].replace('@','')
+        raw_words[i]=raw_words[i].replace('#','')
+        raw_words[i]=raw_words[i].replace('<','')
+        raw_words[i]=raw_words[i].replace('>','')
+        raw_words[i]=raw_words[i].replace('$','')
+        raw_words[i]=raw_words[i].replace('%','')
+        raw_words[i]=raw_words[i].replace('^','')
+        raw_words[i]=raw_words[i].replace('&','')
+        raw_words[i]=raw_words[i].replace('+','')
+        raw_words[i]=raw_words[i].replace('-','')
+        raw_words[i]=raw_words[i].replace('_','')
+        raw_words[i]=raw_words[i].replace('`','')
+        raw_words[i]=raw_words[i].replace('~','')
+        raw_words[i]=raw_words[i].replace('[','')
+        raw_words[i]=raw_words[i].replace(']','')
+        raw_words[i]=raw_words[i].replace('{','')
+        raw_words[i]=raw_words[i].replace('}','')
         raw_words[i]=raw_words[i].replace('.','')
         raw_words[i]=raw_words[i].replace(',','')
         raw_words[i]=raw_words[i].replace('—','')
